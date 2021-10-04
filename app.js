@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const session = require('express-session');
 const static = express.static(__dirname + '\\src\\public');
-console.log(__dirname+'\\src\\public\n\n\n')
+
 const configRoutes = require('./src/routes');
 const exphbs = require('express-handlebars');
 
@@ -47,7 +47,7 @@ app.use(function (err, req, res, next) {
 })
 configRoutes(app);
 
-app.listen(3000, () => {
+var PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
   console.log("We've now got a server!");
-  console.log('Your routes will be running on http://localhost:3000');
 });
