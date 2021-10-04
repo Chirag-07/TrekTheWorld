@@ -51,7 +51,7 @@ const constructorMethod = app => {
         cancreate = true;
       }
 
-      res.render('standard/home', {
+      res.render('./src/standard/home', {
         events: userInfo
       });
 

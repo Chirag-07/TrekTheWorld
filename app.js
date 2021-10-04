@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const session = require('express-session');
-const static = express.static(__dirname + '/public');
-
-const configRoutes = require('./routes');
+const static = express.static(__dirname + '\\src\\public');
+console.log(__dirname+'\\src\\public\n\n\n')
+const configRoutes = require('./src/routes');
 const exphbs = require('express-handlebars');
 
 
@@ -17,6 +17,7 @@ app.engine('handlebars', exphbs({
   defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
+app.set('views', __dirname+'\\src\\views')
 
 app.use(session({
   secret: Math.random().toString(36).substring(7),
